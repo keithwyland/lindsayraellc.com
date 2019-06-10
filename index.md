@@ -6,10 +6,10 @@ layout: default
     <div>
         <div class="home-logo">
             <h1 class="home-logo__heading">
-                <img class="home-logo__color" src="/assets/images/logo_color.jpg" alt="Lindsay Rae, LLC.">
+                <img class="home-logo__color" src="assets/images/logo_color.jpg" alt="Lindsay Rae, LLC.">
             </h1>
             <div class="home-logo__overlay">
-                    <img src="/assets/images/logo_flower.png" alt="">
+                    <img src="assets/images/logo_flower.png" alt="">
             </div>
         </div>
     </div>
