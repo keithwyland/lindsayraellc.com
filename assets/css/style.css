@@ -359,6 +359,9 @@
 
 
 /* SITE STYLES */
+body {
+  font-family: Georgia, 'Times New Roman', Times, serif;
+}
 
 img {
     max-width: 100%;
@@ -366,15 +369,13 @@ img {
 }
 
 .wrap {
-    display: grid;
-    align-content: center;
-    justify-content: center;
 }
 
 .wrap--home {
-    height: 100vh;
     padding: 2em;
-    grid-template-rows: 70fr 30fr;
+    display: grid;
+    justify-content: center;
+    align-content: center;
 }
 
 .wrap--home img {
@@ -382,28 +383,30 @@ img {
 }
 
 .home-logo {
-    position: relative;
+  position: relative;
 
 }
 
 .home-logo img {
-    display: block;
+  display: block;
 }
 
 .home-logo__heading {
     padding: 0;
     margin: 0;
+    position: relative;
+    z-index: 1;
 }
 
-.home-logo__overlay,
-.home-logo__heading {
+.home-logo__overlay {
     position: absolute;
     top: 0;
     left: 0;
 }
 
 .home-logo__overlay {
-    animation: logofadein .8s ease-in 1.7s forwards;
+    animation: logofadeout .8s ease-in 1.5s forwards;
+    z-index: 0;
 }
 
 .home-logo__overlay:after {
@@ -414,26 +417,82 @@ img {
     bottom: 0;
     left: 0;
     background-color: white;
-    animation: logoslideup 2s ease-out forwards;
 }
 
-@keyframes logoslideup {
+.home-logo__subhead {
+  margin-top: 0;
+}
+
+.home-address {
+  margin-bottom: 2em;
+}
+
+.home-nav__list {
+  list-style: none;
+  display: flex;
+  padding: 0;
+  margin: 0;
+  justify-content: space-around;
+}
+
+.home-nav__list li {
+  font-size: 1.1em;
+  width: 150px;
+  text-align: center;
+}
+
+.home-nav__list a {
+  background-color: #517a0a;
+  padding: .8em 1.2em;
+  display: block;
+  text-decoration: none;
+  color: white;
+  border-radius: 5px;
+  font-weight: bold;
+  text-transform: uppercase;
+  transition: background-color .3s ease-in-out;
+}
+
+.home-nav__list a:hover {
+  background-color: #7f080b;
+}
+
+@supports (animation-name: logoreveal) {
+  .home-logo__overlay {
+    z-index: 2;
+  }
+  .home-logo__overlay:after {
+    animation: logoreveal 1.8s ease-out forwards;
+  }
+  .home-logo__subhead,
+  .home-nav,
+  .home-address {
+    opacity: 0;
+    animation: logofadein .8s ease-in 1.5s forwards; 
+  }
+}
+
+
+@keyframes logoreveal {
     100% {
         bottom: 100%;
     }
 }
 
-@keyframes logofadein {
-    100% {
-        opacity: 0;
-    }
+@keyframes logofadeout {
+  100% {
+      opacity: 0;
+  }
 }
 
-.home-nav__list {
-    list-style: none;
-    display: flex;
-    padding: 0;
-    margin: 0;
+@keyframes logofadein {
+  100% {
+      opacity: 1;
+  }
+}
+
+.heading-sub {
+  font-size: 2em;
 }
 
 /* END SITE STYLES */
@@ -448,5 +507,9 @@ img {
     overflow: hidden;
     clip: rect(1px 1px 1px 1px); /* IE6, IE7 */
     clip: rect(1px, 1px, 1px, 1px);
+}
+
+.text-center {
+  text-align: center;
 }
 /* END UTILITY CLASSES */
