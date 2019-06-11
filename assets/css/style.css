@@ -389,6 +389,7 @@ img {
 
 .home-logo img {
   display: block;
+  margin: 0 auto;
 }
 
 .home-logo__heading {
@@ -402,6 +403,7 @@ img {
     position: absolute;
     top: 0;
     left: 0;
+    width: 100%;
 }
 
 .home-logo__overlay {
@@ -430,6 +432,7 @@ img {
 .home-nav__list {
   list-style: none;
   display: flex;
+  flex-wrap: wrap;
   padding: 0;
   margin: 0;
   justify-content: space-around;
@@ -439,6 +442,7 @@ img {
   font-size: 1.1em;
   width: 150px;
   text-align: center;
+  margin: 1em 1em 0;
 }
 
 .home-nav__list a {
@@ -492,7 +496,13 @@ img {
 }
 
 .heading-sub {
-  font-size: 2em;
+  font-size: 1.2em;
+}
+
+@media (min-width: 475px) {
+  .heading-sub {
+    font-size: 1.8em;
+  }
 }
 
 /* END SITE STYLES */
