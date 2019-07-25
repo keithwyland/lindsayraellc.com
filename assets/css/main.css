@@ -678,6 +678,18 @@ address {
 .footer-inner address {
   font-size: .9em;
 }
+.about-image {
+  border: 3px solid #517a0a;
+  border-radius: 5px;
+}
+@media (min-width: 550px) {
+  .about-image {
+    float: right;
+    margin: 0 0 2em 2em;
+    border: 3px solid #517a0a;
+    border-radius: 5px;
+  }
+}
 
 /* END SITE STYLES */
 
