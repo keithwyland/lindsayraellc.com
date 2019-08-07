@@ -396,13 +396,14 @@ address {
 }
 
 .wrap--home img {
-    max-height: 500px;
+    max-height: 425px;
 }
 
 .button {
   background-color: #517a0a;
   border-bottom: 3px solid #CFDABC;
   padding: .8em 1.2em;
+  margin: 0 .5em;
   display: inline-block;
   text-decoration: none;
   color: white;
@@ -418,6 +419,10 @@ address {
 .button:focus {
   background-color: #A60707;
   border-bottom-color: #DEA4A4;
+}
+
+.button + .button {
+  margin: 0 .5em 1em;
 }
 
 .button--small {
@@ -610,7 +615,7 @@ address {
 }
 
 .content {
-  padding: 0 3em 0 3em;
+  padding: 0 1em 0 1em;
   margin: 0 auto;
   max-width: 90ch;
   position: relative;
@@ -690,6 +695,28 @@ address {
     border-radius: 5px;
   }
 }
+
+/*Massagebook iframe fixes*/
+.mbframe {
+  overflow: hidden;
+  position: relative;
+}
+
+.mbframe iframe {
+  height: 2600px;
+  margin-top: calc((-.25*2600px) - 205px);
+}
+
+.mbframe.loading:after {
+  position: absolute;
+  content: 'LOADING...';
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(255, 255, 255, 1);
+}
+/*END Massagebook iframe fixes*/
 
 /* END SITE STYLES */
 
